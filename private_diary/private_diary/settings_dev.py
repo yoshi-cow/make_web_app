@@ -50,3 +50,6 @@ LGGING = {
 
 # 開発時のメール配信先設定
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# uploadファイルの保存ディレクトリ（url.pyのルーティングで使用する）
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

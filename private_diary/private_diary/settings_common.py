@@ -159,13 +159,17 @@ AUTHENTICATION_BACKENDS = (
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USERNAME_REQUIRED = False
 
-# サインアップにメールアドレスかくにんをはさむよう設定
+# サインアップにメールアドレス確認を挟むよう設定
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
 
 # ログイン/ログアウト後の遷移先を設定
-LOGIN_REDIRECT_URL = 'diary:index'
+# LOGIN_REDIRECT_URL = 'diary:index' # ログイン後トップページに遷移
+LOGIN_REDIRECT_URL = 'diary:diary_list' # ログイン後日記一覧ページに遷移
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 
 # ログアウトリンクのクリック一発でログアウトする設定
 ACCOUNT_LOGOUT_ON_GET = True
+
+# 画像をアップロードするサイトurlの登録（url.pyのルーティングで使用する）
+MEDIA_URL = '/media/'
